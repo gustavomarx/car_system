@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* Dark mode class-based no Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── CSS Custom Properties ── */
+:root {
+  --ap-bg:           #fafafa;
+  --ap-surface:      #ffffff;
+  --ap-surface-2:    #f4f4f5;
+  --ap-border:       #e4e4e7;
+  --ap-text:         #09090b;
+  --ap-text-2:       #71717a;
+  --ap-text-3:       #a1a1aa;
+  --ap-primary:      #7c3aed;
+  --ap-primary-2:    #6d28d9;
+  --ap-primary-sub:  #ede9fe;
+  --ap-primary-text: #7c3aed;
+  --ap-price:        #2563eb;
+  --ap-nav-bg:       #ffffff;
+  --ap-nav-border:   #e4e4e7;
+  --ap-nav-active:   #7c3aed;
+  --ap-nav-idle:     #a1a1aa;
+}
+
+.dark {
+  --ap-bg:           #09090b;
+  --ap-surface:      #18181b;
+  --ap-surface-2:    #27272a;
+  --ap-border:       #3f3f46;
+  --ap-text:         #fafafa;
+  --ap-text-2:       #a1a1aa;
+  --ap-text-3:       #71717a;
+  --ap-primary:      #8b5cf6;
+  --ap-primary-2:    #7c3aed;
+  --ap-primary-sub:  #2e1065;
+  --ap-primary-text: #a78bfa;
+  --ap-price:        #60a5fa;
+  --ap-nav-bg:       #18181b;
+  --ap-nav-border:   #3f3f46;
+  --ap-nav-active:   #a78bfa;
+  --ap-nav-idle:     #71717a;
+}
+
+/* ── Tailwind v4 tokens (inline = usa CSS var) ── */
+@theme inline {
+  --color-ap-bg:          var(--ap-bg);
+  --color-ap-surface:     var(--ap-surface);
+  --color-ap-surface-2:   var(--ap-surface-2);
+  --color-ap-border:      var(--ap-border);
+  --color-ap-text:        var(--ap-text);
+  --color-ap-text-2:      var(--ap-text-2);
+  --color-ap-text-3:      var(--ap-text-3);
+  --color-ap-primary:     var(--ap-primary);
+  --color-ap-primary-2:   var(--ap-primary-2);
+  --color-ap-primary-sub: var(--ap-primary-sub);
+  --color-ap-price:       var(--ap-price);
+  --color-ap-nav-active:  var(--ap-nav-active);
+  --color-ap-nav-idle:    var(--ap-nav-idle);
+}
+
+/* ── Base ── */
+body {
+  background-color: var(--ap-bg);
+  color: var(--ap-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Helpers ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Input/textarea padrão com tema */
+.ap-input {
+  width: 100%;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--ap-border);
+  background-color: var(--ap-surface);
+  color: var(--ap-text);
+  font-size: 0.875rem;
+  transition: box-shadow 0.15s;
+}
+.ap-input::placeholder { color: var(--ap-text-3); }
+.ap-input:focus { outline: none; box-shadow: 0 0 0 2px var(--ap-primary); }
+
+.ap-textarea {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--ap-border);
+  background-color: var(--ap-surface);
+  color: var(--ap-text);
+  font-size: 0.875rem;
+  resize: none;
+  transition: box-shadow 0.15s;
+}
+.ap-textarea::placeholder { color: var(--ap-text-3); }
+.ap-textarea:focus { outline: none; box-shadow: 0 0 0 2px var(--ap-primary); }
+
+/* Select com tema */
+.ap-select {
+  width: 100%;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--ap-border);
+  background-color: var(--ap-surface);
+  color: var(--ap-text);
+  font-size: 0.875rem;
+}
+.ap-select:focus { outline: none; box-shadow: 0 0 0 2px var(--ap-primary); }
+
+/* Card base */
+.ap-card {
+  background-color: var(--ap-surface);
+  border: 1px solid var(--ap-border);
+  border-radius: 1rem;
+}
